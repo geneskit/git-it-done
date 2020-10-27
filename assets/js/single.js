@@ -30,13 +30,12 @@ var displayIssues = function(issues)
         issueContainerEl.textContent = "This repo has no open issues!";
         return;
     }
-
-    issueContainerEl.appendChild(issueEl);
     
     for (var i = 0; i < issues.length; i++) 
     {
         // create a link element to take users to the issue on github
         var issueEl = document.createElement("a");
+        issueContainerEl.appendChild(issueEl);
         issueEl.classList = "list-item flex-row justify-space-between align-center";
         issueEl.setAttribute("href", issues[i].html_url);
         issueEl.setAttribute("target", "_blank");
